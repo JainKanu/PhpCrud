@@ -4,7 +4,7 @@ Insert in a table
 Select a table
     SELECT * FROM  user; 
 
-
+first-  
     OOPS
     Object orinted programming 
     CLASSES, CONSTRUCTOR, DESTRUCTOR, PUBLIC ,PRIVATE, PROTECTED, STATIC

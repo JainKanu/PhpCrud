@@ -1,17 +1,22 @@
 <?php
 
 include("crud.php");
+include("response.php");
+
+// $DB =  new CRUD();
+// $query = "SELECT * FROM user ORDER by id ASC";
+// $DB->getRecords($query);
+$res = new response(); 
+$res->createTable();
 
 
-$DB =  new CRUD();
-$query = "SELECT * FROM user";
+
 // CRUD::BAR();
 // $DB->foo();
 // $DB->bar();
-$DB->getRecords($query);
-echo "<pre>";
-print_r($DB->data);
-echo "</pre>";
+// echo "<pre>";
+// print_r($DB->data);
+// echo "</pre>";
 // include("lib/mysql.php");
 // include_once("lib/mysql.php");
 // require("lib/mysql.php");

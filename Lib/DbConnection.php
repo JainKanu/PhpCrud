@@ -1,9 +1,9 @@
 <?php
-class DbConnection
+abstract class DbConnection
 {
     public $CONN;
     public function __construct(){
-        echo "Hello";
+        // echo "Hello";
         $this->CONN =null;
         $this->connection();
     }
@@ -21,7 +21,7 @@ class DbConnection
         echo " HI BAR";
     }
     public function __destruct(){
-        echo "Bye";
+        // echo "Bye";
         $this->CONN->close();
     }
 

@@ -8,7 +8,7 @@ class CRUD extends DbConnection
     private $res;
     private $query;
     public function __construct(){
-        echo "<br/>CRUD CONS <br/>";
+        // echo "<br/>CRUD CONS <br/>";
         parent::__construct();
         // $this->foo();
         // $this->bar();
@@ -33,7 +33,7 @@ class CRUD extends DbConnection
         $this->res->free_result();
     }
     public function __destruct(){
-        echo "<br/>CRUD DES <br/>";
+        // echo "<br/>CRUD DES <br/>";
         parent::__destruct();
     }
 
