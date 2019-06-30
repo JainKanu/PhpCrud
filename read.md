@@ -10,3 +10,8 @@ first-
     CLASSES, CONSTRUCTOR, DESTRUCTOR, PUBLIC ,PRIVATE, PROTECTED, STATIC
 
     READ WITH PHP+MYSQL
+
+    Php Bind With Html Complete
+
+
+    Swicthing How to Swicth Events Using global Variables like POST GET FILE GLOBAL

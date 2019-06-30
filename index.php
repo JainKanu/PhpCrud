@@ -2,12 +2,11 @@
 
 include("crud.php");
 include("response.php");
+include("result.php");
 
 // $DB =  new CRUD();
 // $query = "SELECT * FROM user ORDER by id ASC";
 // $DB->getRecords($query);
-$res = new response(); 
-$res->createTable();
 
 
 
