@@ -27,6 +27,7 @@ class CRUD extends DbConnection
         $this->execQuery();
         // $this->data["records"] = $this->res->fetch_assoc();
         if($this->data["COUNT"] > 0)
+        $this->data["records"] = null;
         while ($row = $this->res->fetch_assoc()) {
             $this->data["records"][] = $row;
         }

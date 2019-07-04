@@ -10,7 +10,37 @@
 <body>
     <?php
         $res = new response(); 
-        //POST //GET //SERVER //FILE //GLOBAL
+        
+        // print_r($_GET);
+        if(isset($_GET["action"])){
+            switch ($_GET["action"]) {
+                case 'edit':
+                    $res->showEditForm();
+                    break;
+                case 'delete':
+                    $res->deleteRow();
+                    break;
+                case 'showTable':
+                    $res->createTable();
+                    $res->createButton();
+                    break;
+                case 'update':
+                    $res->updateTable();
+                    break;
+                case 'createRecord':
+                    $res->createRecord();
+                    break;
+                case 'insertRecord':
+                    $res->insertRecord();
+                    break;
+            }
+        }
+        else
+            {
+                $res->createTable();
+                $res->createButton();
+            }
+        //POST //GET //SERVER //FILES //GLOBAL
         // print_r($_POST); 
         /* if( (isset($_POST['create']) && $_POST['create'] === "true") )
         {
@@ -26,7 +56,7 @@
             $res->createTable();
             $res->createButton();  
         } */
-        if(isset($_POST['post']))
+        /* if(isset($_POST['post']))
         switch ($_POST["post"]) {
             case $_POST['create'] == "true":
                     $res->addRecord();
@@ -44,7 +74,7 @@
         else{
             $res->createTable();
             $res->createButton();  
-        }
+        } */
 
     ?>
     
