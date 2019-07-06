@@ -5,12 +5,7 @@ include("DbConnection.php");
 
 $Db = new DbConnection();
 
-// $Db->createConn();
-// $Db->getResult();
 
-// echo "<pre>";
-// print_r($Db->RESULT);
-// echo "</pre>";
 
 ?>
 
@@ -25,33 +20,38 @@ $Db = new DbConnection();
 </head>
 <body>
 
-    <table class="table">
-  <thead>
-    <tr>
-      <th scope="col">id</th>
-      <th scope="col">User Name</th>
-      <th scope="col">user Email</th>
-      <th scope="col">User Password</th>
-      <th scope="col">Action</th>
-
-    </tr>
-  </thead>
-  <tbody>
     <?php
-    // foreach ($Db->RESULT as $key => $value) {
-    //     echo "<tr>";
-    //         echo "<td>" . $value['id'] . "</td>" ;
-    //         echo "<td>" . $value['username'] . "</td>" ;
-    //         echo "<td>" . $value['useremail'] . "</td>" ;
-    //         echo "<td>" . $value['userpassword'] . "</td>" ;
-    //     echo "</tr>";
-    //     }
-      $Db->showResult();
-
+   
+  //  $Db->createTable();
+      if (isset($_GET["action"])){
+        switch ($_GET['action']) {
+          case 'edit':
+            $Db->editForm();
+            break;
+            case 'delete':
+            $Db->deleteForm();
+            break;
+            case 'showTable':
+            $Db->createTable();
+            break;
+            case 'updateTable':
+            $Db->updateTable();
+            break;
+            case 'createRecord':
+            $Db->createRecord();
+            break;
+            case 'insertRecord':
+            $Db->insertRecord();
+            break;
+            
+            
+            
+          }
+        }
+        else 
+        $Db->createTable();
     ?>
-  </tbody>
-  </table>  
-  <button type="submit" class="btn btn-primary">Add User</button>  
+
   
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
