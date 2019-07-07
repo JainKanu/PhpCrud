@@ -2,10 +2,8 @@
 
 define("NAME","Kanu");
 define("HOST","localhost");
-define("DB_USER","root");
-define("DB_PASS","");
+define("DB_USER","karan");
+define("DB_PASS","kanu");
 define("DB_NAME","test");
-
-// localhost", "root", "", "test
 
 ?>

@@ -13,9 +13,9 @@ class DbConnection
         // echo "Bye";
         $this->CONN->close();
     }
-
+    
     private function createConn(){
-        $mysqli = new mysqli("localhost", "root", "", "test");
+        $mysqli = new mysqli("localhost", "karan", "kanu", "test");
         if ($mysqli->connect_errno) {
             echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
         }
