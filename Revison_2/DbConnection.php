@@ -1,24 +1,17 @@
 <?php
 
-class DbConnection
+include("DbConn.php");
+
+class DbConnection extends DbConn
 {   
-    public $CONN;
+    // public $CONN;
     public $Data;
     public function __conrcduct(){
-        // echo "Hello";
+        parent::__construct();        
     }
 
     public function __dercduct(){
-        // echo "Bye";
-    }
-    
-    public function createConnection(){
-        $mysqli = new mysqli("localhost", "karan", "kanu", "test");
-        if ($mysqli->connect_errno) {
-            echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
-        }
-        
-        $this->CONN = $mysqli;
+        parent::__destruct();        
     }
 
     private function getRecord(){
@@ -64,7 +57,9 @@ class DbConnection
     }
 
     public function updateRecord(){
-        $query = "UPDATE `user` SET `id`= '$_POST[username]', `useremail` = '$_POST[useremail]' WHERE `user`.`id` = '$_POST[id]'";
+        $query = "UPDATE `user` SET `username`= '$_POST[username]', `useremail` = '$_POST[useremail]' WHERE `user`.`id` = '$_POST[id]'";
+
+        // print_r($query);
 
         $this->CONN->real_query($query);
         if($this->CONN->affected_rows == 1 ){

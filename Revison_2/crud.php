@@ -4,12 +4,6 @@ include("DbConnection.php");
 
 $DB = new DbConnection();
 
-$DB->createConnection();
-
-
-
-
-
 ?>
 
 <!DOCTYPE html>
