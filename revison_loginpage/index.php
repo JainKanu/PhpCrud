@@ -29,6 +29,7 @@ if($Db->data["count"] === 0){
 }
 else{
     echo "Logged In Successfull";
+    print_r($Db->data["records"]);
 }
 
 ?>
