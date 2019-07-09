@@ -1,13 +1,3 @@
-<?php
-  session_start();
-  // print_r($_SESSION);
-  // exit(isset($_SESSION["login"]));
-  // isset($_SESSION["login"]) === false  ||
-  // exit($_SESSION["login"]);
-  if($_SESSION["login"] === false){
-    header("Location:login.php");
-  }
-?>
 <!DOCTYPE html>
 <html lang="en">
 

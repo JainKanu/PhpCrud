@@ -1,5 +1,7 @@
 <?php
     include("utils/RunQuery.php");
+    session_start();
+    $_SESSION["login"] = false;
     $DB = new RunQuery();
     $mypwd = md5($_POST["password"]);
     // $msg = list($_POST); 
@@ -28,7 +30,10 @@
     }
     else {
         echo "logged in successfull";
-        print_r($DB->data);
+        $_SESSION["login"] = true;
+        $_SESSION["profile"] = $DB->data["records"];
+        // print_r($DB->data);
+        header("Location:blank.php"   );
     }
 ?>
 
