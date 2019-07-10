@@ -35,17 +35,8 @@
     <form class="login-form" method="post" action="check.php">
       <div class="login-wrap">
         <?php
-          if(isset($_GET["msg"])){
-            echo "<div class='alert alert-danger'> ".  $_GET["msg"] ."   </div>";
-          }
-          if(isset($_GET["err"])){
-            $err = json_decode($_GET["err"]);
-            foreach ($err as $key => $value) {
-              // print_r($key);
-              echo "<div class='alert alert-danger'> ".  $value ."   </div>";
-            }
-          }
-          // print_r($_GET["msg"]);
+          include("Common/Login.php");
+          $mLogin = new Login($_GET);
           ?>
           <p class="login-img"><i class="icon_lock_alt"></i></p>
         <div class="input-group">

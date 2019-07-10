@@ -1,7 +1,7 @@
 <?php
 class DbConn
 {
-     protected $conn;
+     public $conn;
      public function __construct(){
         //  echo "hi";
          $this->connection();

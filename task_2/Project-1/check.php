@@ -7,18 +7,21 @@
     // $msg = list($_POST); 
     // print_r($msg);
     $err = [];
+    $querySting = "?err=0";
     if($_POST["username"] === ""){
         $err["username"] = "Please enter Username";
+        // $querySting = "?err=1&username=1";
     }
     if($_POST["password"] === ""){
         $err["userpassword"] = "Please enter Password";
+        // $querySting .= "?err=1&password=1";
     }
     if(count($err)){
         
         header("Location:login.php?err=".json_encode($err)   );
         exit();
     }
-    $sql = "SELECT id,username,useremail FROM user where username='$_POST[username]' and userpassword='$mypwd'";
+    $sql = "SELECT * FROM user where username='$_POST[username]' and userpassword='$mypwd'";
     $DB->selectQuery($sql);
     
     // print_r($DB->data);

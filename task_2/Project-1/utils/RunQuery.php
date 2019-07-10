@@ -10,6 +10,7 @@
         public function __destruct()
         {
             parent::__destruct();
+            unset($this->data);
         }
         public function selectQuery( $query="" ){
             // $this->data["count"] = 0;
@@ -23,15 +24,15 @@
                 // print_r($res);
                 if($this->data["count"] > 0){
                     $this->data["records"] = $res->fetch_assoc();
-                    $this->data["msg"] = "Record founded";
+                    $this->data["msg"] = "1";
                 }
                 else{
-                    $this->data["msg"] = "No record found";
+                    $this->data["msg"] = "0";
                 }
                 $res->close();
             }
             else {
-                $this->data["msg"] = "No query founded";
+                $this->data["msg"] = "2";
             }
             
         }

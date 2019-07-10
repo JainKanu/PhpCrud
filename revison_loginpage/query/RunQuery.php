@@ -22,7 +22,7 @@ class RunQuery extends DbConnection
             $this->data["msg"] = "Record founded";
         }
         else{
-            $this->data["msg"] = "No record found";
+            $this->data["msg"] = "No User found";
         }
         $res->close();
     }
