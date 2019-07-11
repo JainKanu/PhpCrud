@@ -65,7 +65,7 @@ class DbConnection extends DbConn
                 </div>
                 <div class="form-group">
                     <label>Contect No.</label>
-                    <input type="number" name="ContectNo" class="form-control" value="<?php echo $record["ContectNo"] ?>" placeholder="Enter Contect No.">
+                    <input type="tel" name="ContectNo" class="form-control" value="<?php echo $record["ContectNo"] ?>" placeholder="Enter Contect No.">
                 </div>
                 <input type="hidden" name="id" class="form-control" value="<?php echo $record["id"] ?>">
                 <button type="submit" class="btn btn-primary">Update</button>
@@ -116,6 +116,23 @@ class DbConnection extends DbConn
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Address" class="form-control" value="" placeholder="Enter Address">
+                    <small class="form-text text-muted">We'll never share your Address with anyone else.</small>
+            </div>
+            <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="City" class="form-control" value="" placeholder="Enter City">
+            </div>
+            <div class="form-group">
+                    <label>State</label>
+                    <input type="text" name="State" class="form-control" value="" placeholder="Enter State">
+            </div>
+            <div class="form-group">
+                    <label>Contect No.</label>
+                    <input type="tel" name="ContectNo" class="form-control" value="" placeholder="Enter Contect No.">
+            </div>
+            <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" value="" placeholder="Password">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
@@ -127,7 +144,7 @@ class DbConnection extends DbConn
     }
 
     public function insertRecord(){
-        $query = "INSERT INTO `user` (`id`, `username`, `useremail`, `userpassword`) VALUES (NULL, '".$_POST["username"]."', '".$_POST["useremail"]."', MD5('".$_POST["password"]."'))";
+        $query = "INSERT INTO `user` (`id`, `username`, `useremail`, `Address`, `City`, `State`, `ContectNo`, `userpassword`) VALUES (NULL, '".$_POST["username"]."', '".$_POST["useremail"]."', '".$_POST["Address"]."', '".$_POST["City"]."', '".$_POST["State"]."', '".$_POST["ContectNo"]."', MD5('".$_POST["password"]."'))";
         $this->CONN->real_query($query);
 
         echo "New Record Created Succesfully";

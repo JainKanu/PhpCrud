@@ -3,11 +3,11 @@
 
 if(isset($_GET["page"]))
    switch ($_GET["page"]) {
-     case 'crud':
+     case 'Crud':
        require("crud/crud.php");
        exit();
        break;
-     case 'profile':
+     case 'Profile':
        require("Profile/Profile.php");
        exit();
        break;

@@ -54,7 +54,7 @@
     function changePhoto(){
        
         ?>
-            <form method="post" enctype="multipart/form-data" action="?page=profile&action=changePhoto&action=file">
+            <form method="post" enctype="multipart/form-data" action="?page=Profile&action=changePhoto&action=file">
                 <input type="file" value="" name="profilePic" />
                 <input type="hidden" value="" name="profilename" />
                 <img src='<?php echo "img/profilePic/".$_SESSION["profile"]["username"]."_profilepic.jpg"; ?>' width="15%">
@@ -62,7 +62,7 @@
                     address();
                 ?>
             </form>
-            <a href="?page=profile&action=changePhoto&action=delete">deleteFile</a>
+            <a href="?page=Profile&action=changePhoto&action=delete">deleteFile</a>
 
         <?php
     }
@@ -118,7 +118,7 @@
             <div class="card-body">
               <h3 class="card-title mt-0 mb-5">Profile</h3>
               <p class="card-text pb-5">Click on button to Update Profile</p>
-              <a href="?page=profile&action=changePhoto" class="btn btn-primary">Update Profile</a>
+              <a href="?page=Profile&action=changePhoto" class="btn btn-primary">Update Profile</a>
             </div>
           </div>
         </div>

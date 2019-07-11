@@ -37,9 +37,9 @@ class DbConnection extends DbConn
         }
 
         ?>
-        <a class="btn btn-primary" href="?page=crud&action=showTable">Show Table</a>
+        <a class="btn btn-primary" href="?page=Crud&action=Table">Show Table</a>
 
-            <form action="?action=updateRecord" method="post">
+            <form action="?page=Crud&action=updateRecord" method="post">
                 <div class="form-group">
                     <label>User Name</label>
                     <input type="text" name="username" class="form-control" value="<?php echo $record["username"] ?>" placeholder="Enter Name">
@@ -50,6 +50,23 @@ class DbConnection extends DbConn
                     <input type="email" name="useremail" class="form-control" value="<?php echo $record["useremail"] ?>" placeholder="Enter email">
                     <small class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Address" class="form-control" value="<?php echo $record["Address"] ?>" placeholder="Enter Address">
+                    <small class="form-text text-muted">We'll never share your Address with anyone else.</small>
+                </div>
+                <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="City" class="form-control" value="<?php echo $record["City"] ?>" placeholder="Enter City">
+                </div>
+                <div class="form-group">
+                    <label>State</label>
+                    <input type="text" name="State" class="form-control" value="<?php echo $record["State"] ?>" placeholder="Enter State">
+                </div>
+                <div class="form-group">
+                    <label>Contect No.</label>
+                    <input type="tel" name="ContectNo" class="form-control" value="<?php echo $record["ContectNo"] ?>" placeholder="Enter Contect No.">
+                </div>
                 <input type="hidden" name="id" class="form-control" value="<?php echo $record["id"] ?>">
                 <button type="submit" class="btn btn-primary">Update</button>
             </form>
@@ -57,7 +74,7 @@ class DbConnection extends DbConn
     }
 
     public function updateRecord(){
-        $query = "UPDATE `user` SET `username`= '$_POST[username]', `useremail` = '$_POST[useremail]' WHERE `user`.`id` = '$_POST[id]'";
+        $query = "UPDATE `user` SET `username`= '$_POST[username]', `useremail` = '$_POST[useremail]', `Address` = '$_POST[Address]', `City` = '$_POST[City]', `State` = '$_POST[State]', `ContectNo` = '$_POST[ContectNo]' WHERE `user`.`id` = '$_POST[id]'";
 
         // print_r($query);
 
@@ -85,9 +102,9 @@ class DbConnection extends DbConn
     public function createRecord(){
         echo "create new record";
         ?>
-        <a class="btn btn-primary" href="?page=crud&action=showTable">Show Table</a>
+        <a class="btn btn-primary" href="?page=Crud&action=Table">Show Table</a>
 
-            <form action="?page=crud&action=insertRecord" method="post">
+            <form action="?page=Crud&action=insertRecord" method="post">
             <div class="form-group">
                 <label>User Name</label>
                 <input type="text" name="username" class="form-control" value="" placeholder="Enter Name">
@@ -97,6 +114,23 @@ class DbConnection extends DbConn
                 <label>Email address</label>
                 <input type="email" name="useremail" class="form-control" value="" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" name="Address" class="form-control" value="" placeholder="Enter Address">
+                    <small class="form-text text-muted">We'll never share your Address with anyone else.</small>
+            </div>
+            <div class="form-group">
+                    <label>City</label>
+                    <input type="text" name="City" class="form-control" value="" placeholder="Enter City">
+            </div>
+            <div class="form-group">
+                    <label>State</label>
+                    <input type="text" name="State" class="form-control" value="" placeholder="Enter State">
+            </div>
+            <div class="form-group">
+                    <label>Contect No.</label>
+                    <input type="tel" name="ContectNo" class="form-control" value="" placeholder="Enter Contect No.">
             </div>
             <div class="form-group">
                 <label>Password</label>
@@ -110,7 +144,9 @@ class DbConnection extends DbConn
     }
 
     public function insertRecord(){
-        $query = "INSERT INTO `user` (`id`, `username`, `useremail`, `userpassword`) VALUES (NULL, '".$_POST["username"]."', '".$_POST["useremail"]."', MD5('".$_POST["password"]."'))";
+        $query = "INSERT INTO `user` (`id`, `username`, `useremail`, `Address`, `City`, `State`, `ContectNo`, `userpassword`) VALUES (NULL, '".$_POST["username"]."', '".$_POST["useremail"]."', '".$_POST["Address"]."', '".$_POST["City"]."', '".$_POST["State"]."', '".$_POST["ContectNo"]."', MD5('".$_POST["password"]."'))";
+
+
         $this->CONN->real_query($query);
 
         echo "New Record Created Succesfully";
@@ -150,8 +186,8 @@ class DbConnection extends DbConn
                         $rcd .= "<td>{$Data[$i]["City"]}</td>";
                         $rcd .= "<td>{$Data[$i]["State"]}</td>";
                         $rcd .= "<td>{$Data[$i]["ContectNo"]}</td>";
-                        $rcd .= "<td><a href='?page=crud&action=editRecord&id={$Data[$i]['id']}' class='btn btn-primary '> Edit</a></td>";
-                        $rcd .= "<td><a  href='?page=crud&action=deleteRecord&id={$Data[$i]['id']}' class='btn btn-primary '> Delete</a></td>";
+                        $rcd .= "<td><a href='?page=Crud&action=Edit&id={$Data[$i]['id']}' class='btn btn-primary '> Edit</a></td>";
+                        $rcd .= "<td><a  href='?page=Crud&action=Delete&id={$Data[$i]['id']}' class='btn btn-primary '> Delete</a></td>";
                         $rcd .= "</tr>";
                     }
                     echo $rcd;
@@ -160,7 +196,7 @@ class DbConnection extends DbConn
         </table>
         <?php
 
-             echo "<a  href='?page=crud&action=createRecord' class='btn btn-primary '> Create Record</a>";
+             echo "<a  href='?page=Crud&action=Create' class='btn btn-primary '> Create Record</a>";
 
 
     }

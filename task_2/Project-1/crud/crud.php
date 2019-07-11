@@ -20,19 +20,19 @@ $DB = new DbConnection();
 
             if(isset($_GET["action"])){
                 switch ($_GET["action"]) {
-                    case 'editRecord':
+                    case 'Edit':
                         $DB->editRecord();
                         break;
-                    case 'deleteRecord':
+                    case 'Delete':
                         $DB->deleteRecord();
                         break;
-                    case 'showTable':
+                    case 'Table':
                         $DB->showTable();
                         break;
                     case 'updateRecord':
                         $DB->updateRecord();
                         break;
-                    case 'createRecord':
+                    case 'Create':
                         $DB->createRecord();
                         break;
                     case 'insertRecord':

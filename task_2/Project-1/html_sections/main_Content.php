@@ -19,7 +19,7 @@
             <div class="card-body">
               <h3 class="card-title mt-0 mb-5">Crud Page</h3>
               <p class="card-text pb-5">Click on button to go on the crud page</p>
-              <a href="?page=crud" class="btn btn-primary">Crud</a>
+              <a href="?page=Crud" class="btn btn-primary">Crud</a>
             </div>
           </div>
           
@@ -27,7 +27,7 @@
             <div class="card-body">
               <h3 class="card-title mt-0 mb-5">Profile Page</h3>
               <p class="card-text pb-5">Click on button to go on the profile page</p>
-              <a href="?page=profile" class="btn btn-primary">Profile</a>
+              <a href="?page=Profile" class="btn btn-primary">Profile</a>
             </div>
       </div>
 
