@@ -64,8 +64,8 @@ class DbConnection extends DbConn
                     <input type="text" name="State" class="form-control" value="<?php echo $record["State"] ?>" placeholder="Enter State">
                 </div>
                 <div class="form-group">
-                    <label>Contect No.</label>
-                    <input type="tel" name="ContectNo" class="form-control" value="<?php echo $record["ContectNo"] ?>" placeholder="Enter Contect No.">
+                    <label>Contact No.</label>
+                    <input type="tel" name="ContactNo" class="form-control" value="<?php echo $record["ContactNo"] ?>" placeholder="Enter Contact No.">
                 </div>
                 <input type="hidden" name="id" class="form-control" value="<?php echo $record["id"] ?>">
                 <button type="submit" class="btn btn-primary">Update</button>
@@ -74,7 +74,7 @@ class DbConnection extends DbConn
     }
 
     public function updateRecord(){
-        $query = "UPDATE `user` SET `username`= '$_POST[username]', `useremail` = '$_POST[useremail]', `Address` = '$_POST[Address]', `City` = '$_POST[City]', `State` = '$_POST[State]', `ContectNo` = '$_POST[ContectNo]' WHERE `user`.`id` = '$_POST[id]'";
+        $query = "UPDATE `user` SET `username`= '$_POST[username]', `useremail` = '$_POST[useremail]', `Address` = '$_POST[Address]', `City` = '$_POST[City]', `State` = '$_POST[State]', `ContactNo` = '$_POST[ContactNo]' WHERE `user`.`id` = '$_POST[id]'";
 
         // print_r($query);
 
@@ -129,8 +129,8 @@ class DbConnection extends DbConn
                     <input type="text" name="State" class="form-control" value="" placeholder="Enter State">
             </div>
             <div class="form-group">
-                    <label>Contect No.</label>
-                    <input type="tel" name="ContectNo" class="form-control" value="" placeholder="Enter Contect No.">
+                    <label>Contact No.</label>
+                    <input type="tel" name="ContactNo" class="form-control" value="" placeholder="Enter Contact No.">
             </div>
             <div class="form-group">
                 <label>Password</label>
@@ -144,7 +144,7 @@ class DbConnection extends DbConn
     }
 
     public function insertRecord(){
-        $query = "INSERT INTO `user` (`id`, `username`, `useremail`, `Address`, `City`, `State`, `ContectNo`, `userpassword`) VALUES (NULL, '".$_POST["username"]."', '".$_POST["useremail"]."', '".$_POST["Address"]."', '".$_POST["City"]."', '".$_POST["State"]."', '".$_POST["ContectNo"]."', MD5('".$_POST["password"]."'))";
+        $query = "INSERT INTO `user` (`id`, `username`, `useremail`, `Address`, `City`, `State`, `ContactNo`, `userpassword`) VALUES (NULL, '".$_POST["username"]."', '".$_POST["useremail"]."', '".$_POST["Address"]."', '".$_POST["City"]."', '".$_POST["State"]."', '".$_POST["ContactNo"]."', MD5('".$_POST["password"]."'))";
 
 
         $this->CONN->real_query($query);
@@ -169,7 +169,7 @@ class DbConnection extends DbConn
                     <th>Address</th>
                     <th>City</th>
                     <th>State</th>
-                    <th>Contect No.</th>
+                    <th>Contact No.</th>
                     <th colspan="2">Action</th>
                 </tr>
             </thead>
@@ -185,7 +185,7 @@ class DbConnection extends DbConn
                         $rcd .= "<td>{$Data[$i]["Address"]}</td>";
                         $rcd .= "<td>{$Data[$i]["City"]}</td>";
                         $rcd .= "<td>{$Data[$i]["State"]}</td>";
-                        $rcd .= "<td>{$Data[$i]["ContectNo"]}</td>";
+                        $rcd .= "<td>{$Data[$i]["ContactNo"]}</td>";
                         $rcd .= "<td><a href='?page=Crud&action=Edit&id={$Data[$i]['id']}' class='btn btn-primary '> Edit</a></td>";
                         $rcd .= "<td><a  href='?page=Crud&action=Delete&id={$Data[$i]['id']}' class='btn btn-primary '> Delete</a></td>";
                         $rcd .= "</tr>";
